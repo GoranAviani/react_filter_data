@@ -14,6 +14,9 @@ const peopleWhoBelongToTheMovieClub = (data) => {
     return data.filter(x => x.member === true)
 }
 
+const ofAge = (data) => {
+    return data.filter(x=> x.age > 18)
+}
 
 function App() {
     const fiveAndGreater = fiveAndGreaterOnly([3, 6, 8, 2]); /// [6, 8]
@@ -27,6 +30,12 @@ function App() {
     { name: "Bob Ziroll", member: true }
 ]);
 
+    const age = ofAge([
+    { name: "Angelina Jolie", age: 80 },
+    { name: "Eric Jones", age: 2 },
+    { name: "Paris Hilton", age: 5 },
+    { name: "Kayne West", age: 50 },
+    { name: "Bob Ziroll", age: 100 }])
 
     return (
     <>
@@ -34,6 +43,7 @@ function App() {
         evensOnly: {evens.map ( x=> <>{x}, </> )}
         fiveCharactersOrFewerOnly: {chars.map ( x=> <li>{x}</li>)}
         peopleWhoBelongToTheMovieClub: {club.map (x=> <p>Name: {x.name} member: {x.member.toString()}</p>)}
+
       <br/>
     </>
   );
