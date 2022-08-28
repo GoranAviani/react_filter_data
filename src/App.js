@@ -43,7 +43,7 @@ function App() {
         evensOnly: {evens.map ( x=> <>{x}, </> )}
         fiveCharactersOrFewerOnly: {chars.map ( x=> <li>{x}</li>)}
         peopleWhoBelongToTheMovieClub: {club.map (x=> <p>Name: {x.name} member: {x.member.toString()}</p>)}
-
+        age: {age.map (x => <p>Name: {x.name}</p>)}
       <br/>
     </>
   );
